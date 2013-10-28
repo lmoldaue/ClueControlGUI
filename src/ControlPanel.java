@@ -3,6 +3,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -17,6 +18,19 @@ public class ControlPanel extends JPanel{
 	private SomePanel die, guess, guessResult;
 	
 	public ControlPanel() {
+	    JFrame.setDefaultLookAndFeelDecorated(true);
+	    JFrame frame = new JFrame("GridLayout Test");
+
+	    frame.setLayout(new GridLayout(2,4));
+	    frame.add(die);
+	    frame.add(whoseTurn);
+	    frame.add(next);
+	    frame.add(accuse);
+	    frame.add(guess);
+	    frame.add(guessResult);
+	    frame.pack();
+	    frame.setVisible(true);
+		
 		setLayout(new GridLayout(2, 4));
 		
 		whoseTurn = new SomeTextField("Whose Turn?", 20);
