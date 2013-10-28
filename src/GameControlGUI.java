@@ -21,27 +21,29 @@ public class GameControlGUI extends JFrame {
 	private SomePanel die, guess, guessResult;
 
 	public GameControlGUI() {
-		setSize(new Dimension(1000, 150));
+		setSize(new Dimension(1000, 300));
 		setTitle("Clue");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JFrame.setDefaultLookAndFeelDecorated(true);
 			
-		setLayout(new GridLayout(2, 4));
+		setLayout(new GridLayout(4, 2));
 		
 		whoseTurn = new SomeTextField("Whose Turn?", 20);
 		add(whoseTurn);
+		
+		die = new SomePanel("Die", "Roll", 5);
+		add(die);
 		
 		next = new JButton("Next Player");
 		accuse = new JButton("Make an Accusation");
 		add(next);
 		add(accuse);
 		
-		die = new SomePanel("Die", "Roll", 5);
-		add(die);
-		
 		guess = new SomePanel("Guess", "Guess", 20);
 		add(guess);
+		
+		add(new JPanel());
 		
 		guessResult = new SomePanel("Guess Result", "Response", 10);
 		add(guessResult);
